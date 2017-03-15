@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			body{
+				font-family: Arial;
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<h2>ADD ACCOUNT</h2>
+			<form method="post">
+				<table cellpadding="4" cellspacing="4">
+					<tr>
+						<td>ACCOUNT NO.</td>
+						<td><input type="text" name="no"/></td>
+					</tr>
+					<tr>
+						<td>ACCOUNT NAME</td>
+						<td><input type="text"  name="name"/></td>
+					</tr>
+					<tr>
+						<td>ACCOUNT TYPE</td>
+						<td>
+							<select name="type">
+								<option>Savings</option>
+								<option>Credit</option>
+								<option>Current</option>
+								<option>Fixed</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<td><input type="submit" name="buttonAdd" value="Create Account" /></td>
+					</tr>
+				</table>
+			</form>
+			<br />
+			
+			<!-- Label to display error message -->
+			<label>
+			<?php 
+			if(isset($error)){
+
+			if($error==-1)
+				{
+				echo "Acccunt No already exists!";
+				}else{
+				
+					echo "Success!";
+
+				}
+				}	
+				?>
+				
+			</label>
+			<br/>
+			<br/>
+			<a href="/ci226/home">Back to Home</a>
+		</center>
+	</body>
+</html>

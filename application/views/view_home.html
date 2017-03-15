@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	<body>
+		<center>
+			<h3>Welcome to homepage</h3>
+
+			<h2>User List</h2>
+			<a href="http://localhost:8082/ci226/home/adduser">Add New</a>
+			<table border="1">
+				<tr>
+					<th>USERNAME</th>
+				</tr>
+				<?php foreach($userlist as $user) { ?>
+				<tr>
+					<td><a href="http://localhost:8082/ci226/home/userdetails/<?php echo $user['user_id']; ?>"><?php echo $user['username']; ?></a></td>
+				</tr>
+				<?php } ?>
+			</table>
+		</center>
+	</body>
+</html>

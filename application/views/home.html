@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<style type="text/css">
+			body{
+				font-family: Arial;
+			}
+		</style>
+	</head>
+	<body>
+		<center>
+			<h2>HOME</h2>
+			<table cellpadding="4" cellspacing="12">
+				<tr>
+					<td><a href="home/adduser">Add New</a></td>
+					<td><a href="home/deposit">Deposit</a></td>
+					<td><a href="home/withdraw">Withdraw</a></td>
+					<td><a href="home/transfer">Transfer</a></td>
+					<td><a href="home/logout">Logout</a></td>
+				</tr>
+			</table>
+			
+			<br />
+			<br />
+
+			<table border="1" cellpadding="4" cellspacing="4">
+				<thead>
+					<tr>
+						<th>ACCOUNT NO.</th>
+						<th>ACCOUNT NAME</th>
+						<th>OPTION</th>
+					</tr>
+				</thead>
+				<tbody>
+				
+					<?php foreach($userlist as $user) { ?>
+					<tr>
+						<td><a href="home/userdetails/<?php echo $user['account_id']; ?>"><?php echo $user['account_no']; ?></a></td>
+						<td><?php echo $user['account_name']; ?></td>
+						<td><a href="home/deleteuser/<?php echo $user['account_id']; ?>">Delete</a></td>
+					</tr>
+					<?php } ?>
+				</tbody>
+			</table>
+
+		</center>
+	</body>
+</html>
